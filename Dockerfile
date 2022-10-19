@@ -4,7 +4,7 @@ RUN docker-php-ext-install -j$(nproc) gd
 RUN docker-php-ext-install -j$(nproc) zip
 
 
-RUN apk update && apk add --no-cache --repository=http://dl-cdn.alpinelinux.org/alpine/v3.16/community \
+RUN apk update && apk add --no-cache --repository=http://dl-cdn.alpinelinux.org/alpine/latest-stable/community \
     composer \
     git && \
     rm -rf /var/cache/apk/* && \
