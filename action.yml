@@ -1,0 +1,15 @@
+name: 'composer-php-gd-zip'
+description: 'Runs composer using php with gd and zip extensions'
+inputs:
+  action:
+    description: 'Command to run in composer, e.g. install'
+    required: false
+    default: install
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.action }}
+branding:
+    icon: 'download'
+    color: 'orange'
