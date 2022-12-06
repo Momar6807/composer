@@ -16,4 +16,4 @@ RUN apk update && apk add --no-cache --repository=http://dl-cdn.alpinelinux.org/
 COPY composer-entrypoint /usr/local/bin/composer-entrypoint
 RUN chmod +x /usr/local/bin/composer-entrypoint
 
-ENTRYPOINT ["/usr/local/bin/composer-entrypoint"]
+ENTRYPOINT ["/usr/local/bin/composer-entrypoint.sh"]
