@@ -3,7 +3,6 @@ RUN apk add --no-cache coreutils libpng-dev zlib-dev libzip libzip-dev
 
 RUN docker-php-ext-install -j$(nproc) gd
 RUN docker-php-ext-install -j$(nproc) zip
-RUN docker-php-ext-install -j$(nproc) intl
 
 RUN apk update && apk add --no-cache --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community \
     composer \
