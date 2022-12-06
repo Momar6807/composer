@@ -1,5 +1,4 @@
-FROM php:7.4
-
+FROM php:7.4-fpm-alpine
 RUN apk add --no-cache coreutils libpng-dev zlib-dev libzip libzip-dev
 
 COPY ./php.ini /etc/php/7.4/apache2/php.ini
