@@ -1,5 +1,7 @@
 #!/bin/sh
 
+exec cls
+
 set -e
 
 exec composer "$1"
