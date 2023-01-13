@@ -6,6 +6,7 @@ RUN apk add --no-cache \
     g++ \
     make \
     openssl-dev
+RUN docker-php-ext-enable openssl
 
 # Setup bzip2 extension
 RUN apk add --no-cache \
@@ -36,12 +37,11 @@ RUN apk add --no-cache \
     && docker-php-ext-enable mbstring \
     && rm -rf /tmp/*
 
-RUN docker-php-ext-enable gd curl
-RUN docker-php-ext-enable gd openssl
-RUN docker-php-ext-enable gd iconv
-RUN docker-php-ext-enable gd mbstring
-RUN docker-php-ext-enable gd zip
-RUN docker-php-ext-enable gd fileinfo
+RUN docker-php-ext-enable curl
+RUN docker-php-ext-enable iconv
+RUN docker-php-ext-enable mbstring
+RUN docker-php-ext-enable zip
+RUN docker-php-ext-enable fileinfo
 
 RUN apk update && apk add --no-cache --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community \
     composer \
