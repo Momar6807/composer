@@ -6,25 +6,25 @@ RUN apk update && apk add --no-cache \
     libpng-dev libjpeg-turbo-dev libwebp-dev libxpm-dev zlib-dev \
     openssl-dev oniguruma-dev \
     icu-dev bzip2-dev freetype freetype-dev \
-    php8 \
-    php8-cli \
-    php8-redis \
-    php8-gd \
-    php8-common \
-    php8-pdo \
-    php8-pdo_mysql \
-    php8-mysqli \
-    php8-curl \
-    php8-mcrypt \
-    php8-intl \
-    php8-json \
-    php8-xdebug \
-    php8-mbstring \
-    php8-redis \
-    php8-pear \
-    php8-xml \
-    php8-phar \
-    php8-zip
+    php7 \
+    php7-cli \
+    php7-redis \
+    php7-gd \
+    php7-common \
+    php7-pdo \
+    php7-pdo_mysql \
+    php7-mysqli \
+    php7-curl \
+    php7-mcrypt \
+    php7-intl \
+    php7-json \
+    php7-xdebug \
+    php7-mbstring \
+    php7-redis \
+    php7-pear \
+    php7-xml \
+    php7-phar \
+    php7-zip
 
 RUN set -xe && \
     cd /tmp/ && \
