@@ -1,5 +1,5 @@
 FROM php:8.1-fpm-alpine
-RUN apk add --no-cache coreutils libpng-dev zlib-dev libzip libzip-dev libcurl-dev
+RUN apk add --no-cache coreutils libpng-dev zlib-dev libzip libzip-dev libcurl3 libcurl-dev
 
 RUN php --ini
 
