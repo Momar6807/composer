@@ -1,5 +1,4 @@
 FROM php:8.1-fpm-alpine
-RUN docker login --username 
 RUN apk add --no-cache coreutils libpng-dev zlib-dev libzip libzip-dev
 
 RUN docker-php-ext-install -j$(nproc) gd
