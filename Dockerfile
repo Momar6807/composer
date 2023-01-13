@@ -15,6 +15,7 @@ RUN apk add --no-cache \
 RUN apk add --no-cache coreutils libpng-dev zlib-dev libzip libzip-dev curl-dev
 RUN docker-php-ext-install -j$(nproc) gd
 RUN docker-php-ext-install -j$(nproc) zip
+RUN docker-php-ext-install -j$(nproc) curl
 
 # Install intl extension
 RUN apk add --no-cache \
