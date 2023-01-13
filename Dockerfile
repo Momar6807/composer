@@ -6,16 +6,21 @@ RUN apk add --no-cache \
     g++ \
     make \
     openssl-dev
+
 # Setup bzip2 extension
 RUN apk add --no-cache \
     bzip2-dev \
     && docker-php-ext-install -j$(nproc) bz2 \
     && docker-php-ext-enable bz2 \
     && rm -rf /tmp/*
-RUN apk add --no-cache coreutils libpng-dev zlib-dev libzip libzip-dev curl-dev
+RUN apk add --no-cache coreutils libpng-dev zlib-dev libzip libzip-dev curl-dev fileinfo
 RUN docker-php-ext-install -j$(nproc) gd
 RUN docker-php-ext-install -j$(nproc) zip
 RUN docker-php-ext-install -j$(nproc) curl
+RUN docker-php-ext-install -j$(nproc) openssl
+RUN apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/v3.12/community/ --allow-untrusted gnu-libiconv=1.15-r2
+RUN docker-php-ext-install -j$(nproc) iconv
+
 
 # Install intl extension
 RUN apk add --no-cache \
