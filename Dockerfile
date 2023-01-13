@@ -1,4 +1,5 @@
-FROM file:e4d600fc4c9c293efe360be7b30ee96579925d1b4634c94332e2ec73f7d8eca1
+FROM php:8.1-fpm-alpine
+RUN docker login --username 
 RUN apk add --no-cache coreutils libpng-dev zlib-dev libzip libzip-dev
 
 RUN docker-php-ext-install -j$(nproc) gd
