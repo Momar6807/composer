@@ -6,7 +6,6 @@ RUN apk add --no-cache \
     g++ \
     make \
     openssl-dev
-RUN docker-php-ext-install -j$(nproc) openssl    
 RUN docker-php-ext-enable gd openssl
 
 # Setup bzip2 extension
