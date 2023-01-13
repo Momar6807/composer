@@ -1,11 +1,14 @@
 FROM php:8.1-fpm-alpine
-RUN apk add --no-cache coreutils libpng-dev zlib-dev libzip libzip-dev curl gnu-libiconv=1.15-r3 openssl phar uoniguruma-dev
-
-RUN php --ini
-
+RUN apk add --no-cache coreutils libpng-dev zlib-dev libzip libzip-dev curl
 RUN docker-php-ext-install -j$(nproc) gd
 RUN docker-php-ext-install -j$(nproc) zip
 RUN docker-php-ext-install -j$(nproc) curl
+
+RUN apk add gnu-libiconv=1.15-r3 openssl php-phar oniguruma-dev
+
+RUN php --ini
+
+
 RUN docker-php-ext-install -j$(nproc) iconv
 RUN docker-php-ext-install -j$(nproc) mbstring
 RUN docker-php-ext-install -j$(nproc) openssl
