@@ -1,4 +1,4 @@
-FROM php:5.6-fpm-alpine
+FROM php:8.1-fpm-alpine
 RUN apk add --no-cache coreutils libpng-dev zlib-dev libzip libzip-dev
 
 RUN docker-php-ext-install -j$(nproc) gd
