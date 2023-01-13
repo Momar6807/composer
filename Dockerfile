@@ -13,7 +13,7 @@ RUN apk add --no-cache \
     && docker-php-ext-install -j$(nproc) bz2 \
     && docker-php-ext-enable bz2 \
     && rm -rf /tmp/*
-RUN apk add --no-cache coreutils libpng-dev zlib-dev libzip libzip-dev curl-dev php8-fileinfo
+RUN apk add --no-cache coreutils libpng-dev zlib-dev libzip libzip-dev curl-dev
 RUN docker-php-ext-install -j$(nproc) gd
 RUN docker-php-ext-install -j$(nproc) zip
 RUN docker-php-ext-install -j$(nproc) curl
