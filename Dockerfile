@@ -30,7 +30,6 @@ RUN apk add --no-cache \
     && docker-php-ext-enable mbstring \
     && rm -rf /tmp/*
 
-RUN docker-php-ext-enable gd dom
 RUN docker-php-ext-enable gd curl
 RUN docker-php-ext-enable gd openssl
 RUN docker-php-ext-enable gd iconv
