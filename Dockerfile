@@ -1,5 +1,5 @@
 FROM php:8.1-fpm-alpine
-RUN echo php --ini
+RUN echo php -i
 RUN apk add --no-cache \
     yarn \
     autoconf \
@@ -30,13 +30,13 @@ RUN apk add --no-cache \
     && docker-php-ext-enable mbstring \
     && rm -rf /tmp/*
 
-RUN docker-php-ext-enable ext-dom
-RUN docker-php-ext-enable curl
-RUN docker-php-ext-enable openssl
-RUN docker-php-ext-enable iconv
-RUN docker-php-ext-enable mbstring
-RUN docker-php-ext-enable zip
-RUN docker-php-ext-enable ext-fileinfo
+RUN docker-php-ext-enable gd dom
+RUN docker-php-ext-enable gd curl
+RUN docker-php-ext-enable gd openssl
+RUN docker-php-ext-enable gd iconv
+RUN docker-php-ext-enable gd mbstring
+RUN docker-php-ext-enable gd zip
+RUN docker-php-ext-enable gd fileinfo
 
 RUN apk update && apk add --no-cache --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community \
     composer \
