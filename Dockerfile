@@ -6,7 +6,7 @@ RUN apk add --no-cache \
     g++ \
     make \
     openssl-dev
-RUN docker-php-ext-enable openssl
+RUN docker-php-ext-enable gd openssl
 
 # Setup bzip2 extension
 RUN apk add --no-cache \
