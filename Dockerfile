@@ -16,6 +16,7 @@ RUN apk add --no-cache \
     && rm -rf /tmp/*
 RUN apk add --no-cache coreutils libpng-dev zlib-dev libzip libzip-dev curl-dev openssl-dev
 RUN docker-php-ext-install -j$(nproc) gd
+RUN docker-php-ext-install -j$(nproc) openssl
 RUN docker-php-ext-enable gd openssl
 RUN docker-php-ext-install -j$(nproc) zip
 RUN docker-php-ext-install -j$(nproc) curl
